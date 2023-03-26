@@ -1,0 +1,19 @@
+name: Sample GHA Workflow for PPC 
+
+on: [ workflow_dispatch, push ]
+
+jobs:
+  power_job:
+    name: Power Job
+    runs-on: ubuntu-latest-ppc64le
+    steps:
+      - name: Run commands
+        run: |
+          arch 
+          ip addr show
+          ls -lha
+          pwd
+          hostname
+          free -h
+          nproc
+          echo "test"
