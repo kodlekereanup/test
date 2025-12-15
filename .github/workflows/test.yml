@@ -1,0 +1,18 @@
+name: SetupInfo
+
+# Only run on branches (e.g. not tags)
+on:
+  workflow_dispatch:
+
+jobs:
+  check_setup:
+    name: SetupInfo
+    runs-on: 'ubuntu-latest'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        
+      - name: Print
+        run: |
+          cat /home/runner/actions-runner/cached/.setup_info
